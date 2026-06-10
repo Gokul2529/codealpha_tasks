@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Tracker App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header>
+      <div>
+        <h1>Fitness Tracker</h1>
+        <p>Log workouts, steps, calories, and see your daily & weekly progress.</p>
+      </div>
+      <div class="header-chip">Local Storage</div>
+    </header>
+
+    <main>
+      <section class="dashboard" aria-label="fitness summary">
+        <div class="summary-card">
+          <h2>Today</h2>
+          <div class="summary-value" id="todaySteps">0</div>
+          <span>Steps</span>
+        </div>
+        <div class="summary-card">
+          <h2>Calories</h2>
+          <div class="summary-value" id="todayCalories">0</div>
+          <span>Burned</span>
+        </div>
+        <div class="summary-card">
+          <h2>Workout</h2>
+          <div class="summary-value" id="todayWorkout">0</div>
+          <span>Minutes</span>
+        </div>
+      </section>
+
+      <section class="progress-panel">
+        <div class="panel-header">
+          <h2>Weekly Progress</h2>
+          <p>Saved activity performance over the past 7 days.</p>
+        </div>
+        <div class="progress-bars" id="weeklyProgress"></div>
+      </section>
+
+      <section class="entry-card">
+        <div class="panel-header">
+          <h2>Log Activity</h2>
+          <p>Add a new fitness entry to track activity and calories.</p>
+        </div>
+        <form id="entryForm">
+          <div class="form-grid">
+            <label>
+              Date
+              <input type="date" id="entryDate" required>
+            </label>
+            <label>
+              Activity Type
+              <select id="entryType" required>
+                <option value="Walk">Walk</option>
+                <option value="Run">Run</option>
+                <option value="Cycle">Cycle</option>
+                <option value="Gym">Gym</option>
+                <option value="Yoga">Yoga</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+            <label>
+              Steps
+              <input type="number" id="entrySteps" min="0" placeholder="e.g. 5000">
+            </label>
+            <label>
+              Workout Minutes
+              <input type="number" id="entryDuration" min="0" placeholder="e.g. 45">
+            </label>
+            <label>
+              Calories Burned
+              <input type="number" id="entryCalories" min="0" placeholder="e.g. 320">
+            </label>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Save Entry</button>
+            <button type="button" id="clearEntries" class="btn-secondary">Clear All</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="log-list">
+        <div class="panel-header">
+          <h2>Recent Entries</h2>
+          <p>Your logged records appear here.</p>
+        </div>
+        <div id="entryList" class="entry-list"></div>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
