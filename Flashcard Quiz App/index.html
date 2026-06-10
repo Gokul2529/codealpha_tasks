@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flashcard Quiz App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <h1>Flashcard Quiz</h1>
+      <p>Tap the card to reveal the answer, then mark whether you remembered it.</p>
+    </header>
+
+    <section class="quiz-status">
+      <div class="status-item">
+        <span class="label">Progress</span>
+        <span id="progressText">0 / 0</span>
+      </div>
+      <div class="status-item">
+        <span class="label">Score</span>
+        <span id="scoreText">0</span>
+      </div>
+    </section>
+
+    <section class="card-area">
+      <article id="flashcard" class="flashcard" tabindex="0" aria-label="Flashcard question">
+        <div class="card-face front" id="cardText">Loading flashcard...</div>
+      </article>
+    </section>
+
+    <section class="controls">
+      <button id="prevButton" class="control-button" disabled>Previous</button>
+      <button id="showAnswerButton" class="control-button">Show Answer</button>
+      <button id="nextButton" class="control-button" disabled>Next</button>
+    </section>
+
+    <section class="feedback-controls">
+      <button id="correctButton" class="feedback-button">I got it</button>
+      <button id="incorrectButton" class="feedback-button secondary">I missed it</button>
+    </section>
+
+    <section class="settings-panel">
+      <h2>Add a New Card</h2>
+      <form id="addCardForm">
+        <label>
+          Question
+          <textarea id="newQuestion" rows="2" placeholder="Type a new question..." required></textarea>
+        </label>
+        <label>
+          Answer
+          <textarea id="newAnswer" rows="2" placeholder="Type the answer..." required></textarea>
+        </label>
+        <button type="submit" class="add-button">Add Card</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
